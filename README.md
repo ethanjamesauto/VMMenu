@@ -1,3 +1,5 @@
+TL;DR: To build for USB-DVG, use `make clean` followed by `make`.
+
 # VMMenu
 
 A menu system vector games running on a real vector monitor for DOS Mame with a ZVG card

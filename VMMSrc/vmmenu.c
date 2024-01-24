@@ -175,7 +175,7 @@ static       dictionary* ini;
 
 extern int   MouseX, MouseY;
 int          ZVGPresent = 1;
-int          SDL_VC, SDL_VB;            // colour and brightness for SDL vectors
+extern int   SDL_VC, SDL_VB;            // colour and brightness for SDL vectors
 int          mousefound=0;
 int          jsdeadzone=32000;          //Joystick deadzone 
 
@@ -321,7 +321,7 @@ int main(int argc, char *argv[])
        {
             char value[64];
             // Override with game chosen on USB-DVG.
-            if (zvgGetOption("defaultGame", value, sizeof(value)) == 0) {
+            if (0){//zvgGetOption("defaultGame", value, sizeof(value)) == 0) {
                 if (!strcmp(value, "none")) {
                     autostart_allowed = 0;
                 }

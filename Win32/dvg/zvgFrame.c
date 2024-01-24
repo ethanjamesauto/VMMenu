@@ -213,6 +213,12 @@ static int serial_read(void *buf, uint32_t size)
         result = read;
     }
 #else
+    /**
+     * Calling read() immediately will return 0 bytes if called after a write.
+     * The sleep is used to give the DVG some time to process the command.
+     * TODO: find a better solution.
+    */
+    sleep(2); // see above
     result = read(s_serial_fd, buf, size);
     if (result != (int)size) {
         printf("DVG: read error %d \n", result);
